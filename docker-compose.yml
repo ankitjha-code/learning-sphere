@@ -1,0 +1,22 @@
+# Optional local services. The app itself runs with `pnpm dev` and needs none of these.
+#   docker compose up -d mailpit      -> capture emails locally (UI at http://localhost:8025)
+#   docker compose up -d postgres     -> a real Postgres instead of embedded PGlite
+#   DATABASE_URL=postgresql://learnsphere:learnsphere@localhost:5434/learnsphere pnpm dev
+services:
+  mailpit:
+    image: axllent/mailpit:v1.21
+    ports:
+      - '8025:8025'
+      - '1026:1025'
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: learnsphere
+      POSTGRES_PASSWORD: learnsphere
+      POSTGRES_DB: learnsphere
+    ports:
+      - '5434:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

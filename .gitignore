@@ -1,0 +1,82 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+.vite/
+.cache/
+
+# Local data (embedded Postgres, uploads, exports, generated secrets)
+data/*
+!data/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.bundle
+
+# Environment and secrets (only .env.example is committed)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Logs and debug output
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Tests and coverage
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+.vitest/
+
+# Editors and IDEs (keep shared VS Code settings out unless deliberately added)
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+
+# OS files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Misc
+*.tgz
+*.orig
+*.rej
+tmp/
+temp/
+.turbo/
+.vercel/
+.netlify/
+.azure/
+
+# Generated test report (pnpm report)
+reports/
